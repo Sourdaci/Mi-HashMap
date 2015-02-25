@@ -63,4 +63,11 @@ public class MiHashMap{
     public boolean isEmpty(){
         return (claves.size() == 0);
     }
+    
+    /**
+     * Devuelve la cantidad de registros almacenados en el MiHashMap
+     */
+    public int size(){
+        return claves.size();
+    }
 }
