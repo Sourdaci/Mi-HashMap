@@ -45,4 +45,14 @@ public class MiHashMap{
         }
         return encontrado;
     }
+    
+    /**
+     * Devuelve valores guardados en MiHashMap
+     * -1 si la clave introducida no existe
+     */
+    public int get(String clave){
+        int indice = claves.indexOf(clave);
+        int valor = valores.get(indice);
+        return valor;
+    }
 }
