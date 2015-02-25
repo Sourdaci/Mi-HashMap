@@ -93,4 +93,11 @@ public class MiHashMap{
         claves = new ArrayList<String>();
         valores = new ArrayListInt();
     }
+    
+    /**
+     * Devuelve true si encuentra la clave buscada
+     */
+    public boolean containsKey(String clave){
+        return claves.contains(clave);
+    }
 }
