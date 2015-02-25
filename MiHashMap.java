@@ -70,4 +70,19 @@ public class MiHashMap{
     public int size(){
         return claves.size();
     }
+    
+    /**
+     * Elimina el registro que contenga la clave pedida
+     * Devuelve el valor si la clave existe
+     * Devuelve -1 si la clave no existe
+     */
+    public int remove(String clave){
+        int indice = claves.indexOf(clave);
+        int valor = -1;
+        if (indice != -1){
+            claves.remove(indice);
+            valor = valores.remove(indice);
+        }
+        return valor;
+    }
 }
