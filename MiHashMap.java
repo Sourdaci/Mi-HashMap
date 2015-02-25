@@ -55,4 +55,12 @@ public class MiHashMap{
         int valor = valores.get(indice);
         return valor;
     }
+    
+    /**
+     * Devuelve true si el MiHashMap esta vacio
+     * Devuelve false si el MiHashMap contiene algun registro
+     */
+    public boolean isEmpty(){
+        return (claves.size() == 0);
+    }
 }
