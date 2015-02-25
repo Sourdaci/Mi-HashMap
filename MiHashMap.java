@@ -85,4 +85,12 @@ public class MiHashMap{
         }
         return valor;
     }
+    
+    /**
+     * Elimina todo el contenido de MiHashMap
+     */
+    public void clear(){
+        claves = new ArrayList<String>();
+        valores = new ArrayListInt();
+    }
 }
