@@ -1,18 +1,21 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 /**
- * Coleccion de enteros
- * Interfaz ArrayList
- * Implementacion Array
+ * Coleccion de enteros indizada
+ * Interfaz HashMap
+ * Implementacion: Claves como String, Array de int como valor
+ * 
+ * @author Sourdaci
+ * @version 1.2 (2015-03-02 02)
  */
 public class MiHashMap
 {
-    // instance variables - replace the example below with your own
+    // Declaracion de atributos: ArrayList<String> y int[]
     private ArrayList<String> claves;
     private int[] arrayDeEnteros;
 
     /**
-     * Creamos el array vacio
+     * Inicializamos los atributos
      */
     public MiHashMap()
     {
@@ -21,7 +24,12 @@ public class MiHashMap
     }
 
     /**
-     * Agregamos un entero al final del array
+     * Intentamos agregar un valor a la coleccion
+     * Si el valor existe, se sobreescribe y se devuelve el antiguo
+     * 
+     * @param clave El indice 'String' del valor a almacenar
+     * @param valor El valor 'int' a almacenar
+     * @return existe -1 si no existe 'clave', antiguo 'valor' si existe
      */
     public int put(String clave, int valor){
         int existe = -1;
@@ -49,16 +57,17 @@ public class MiHashMap
     }
     
     /**
-     * Busca el elemento pedido
-     * Si existe, devuelve true
-     * Si no existe, devuelve false
+     * Indica si el valor esta almacenado
+     * 
+     * @param valor El valor que se quiere comprobar si existe
+     * @return existe 'true' si se encuentra, 'false' si no se encuentra
      */
-    public boolean containsValue(int elemento){
+    public boolean containsValue(int valor){
         boolean existe = false;
         int contador = 0;
         int longitud = arrayDeEnteros.length;
         while (!existe && contador < longitud){
-            if(arrayDeEnteros[contador] == elemento){
+            if(arrayDeEnteros[contador] == valor){
                 existe = true;
             }else{
                 contador++;
@@ -68,8 +77,10 @@ public class MiHashMap
     }
     
     /**
-     * Devuelve el entero almacenado en la posicion indicada
-     * Si esa posicion no existe, devuelve -1
+     * Busca la clave pedida y devuelve su valor asociado
+     * 
+     * @param clave El 'String' indice buscado
+     * @return valor El 'valor' asociado a la clave, -1 si la clave no existe
      */
     public int get(String clave){
         int valor = -1;
@@ -80,24 +91,28 @@ public class MiHashMap
     }
     
     /**
-     * Devuelve true si no hay enteros guardados
-     * Devuelve false si hay algun elemento guardado
+     * Informa de si el MiHashMap esta vacio
+     * 
+     * @return empty 'true' si esta vacio, 'false' si contiene algun valor
      */
     public boolean isEmpty(){
         return (arrayDeEnteros.length == 0);
     }
     
     /**
-     * Devuelve cuantos enteros hay en la coleccion
+     * Devuelve cuantos datos hay en la coleccion
+     * 
+     * @return size El numero de elementos almacenados en el MiHashMap
      */
     public int size(){
         return arrayDeEnteros.length;
     }
     
     /**
-     * Elimina el elemento de la posicion indicada
-     * Si la posicion existe, devuelve el elemento
-     * Si la posicion no existe, devuelve -1
+     * Elimina el valor de la posicion indicada
+     * 
+     * @param clave El 'String' indice del valor a eliminar
+     * @return valor El 'int' valor borrado, -1 si el indice no existe
      */
     public int remove(String clave){
         int valor = -1;
@@ -120,7 +135,10 @@ public class MiHashMap
     }
     
     /**
-     * Devuelve true si el MiHashMap contiene la clave buscada
+     * Indica si el indice existe en el MiHashMap
+     * 
+     * @param clave El 'String' indice buscado
+     * @return existe 'true' si se encuentra, 'false' si no se encuentra
      */
     public boolean containsKey(String clave){
         return claves.contains(clave);
