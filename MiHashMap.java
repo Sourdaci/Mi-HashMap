@@ -29,7 +29,7 @@ public class MiHashMap
      * 
      * @param clave El indice 'String' del valor a almacenar
      * @param valor El valor 'int' a almacenar
-     * @return existe -1 si no existe 'clave', antiguo 'valor' si existe
+     * @return -1 si no existe 'clave', antiguo 'valor' si existe
      */
     public int put(String clave, int valor){
         int existe = -1;
@@ -60,7 +60,7 @@ public class MiHashMap
      * Indica si el valor esta almacenado
      * 
      * @param valor El valor que se quiere comprobar si existe
-     * @return existe 'true' si se encuentra, 'false' si no se encuentra
+     * @return 'true' si se encuentra, 'false' si no se encuentra
      */
     public boolean containsValue(int valor){
         boolean existe = false;
@@ -80,7 +80,7 @@ public class MiHashMap
      * Busca la clave pedida y devuelve su valor asociado
      * 
      * @param clave El 'String' indice buscado
-     * @return valor El 'valor' asociado a la clave, -1 si la clave no existe
+     * @return El 'valor' asociado a la clave, -1 si la clave no existe
      */
     public int get(String clave){
         int valor = -1;
@@ -93,7 +93,7 @@ public class MiHashMap
     /**
      * Informa de si el MiHashMap esta vacio
      * 
-     * @return empty 'true' si esta vacio, 'false' si contiene algun valor
+     * @return 'true' si esta vacio, 'false' si contiene algun valor
      */
     public boolean isEmpty(){
         return (arrayDeEnteros.length == 0);
@@ -102,7 +102,7 @@ public class MiHashMap
     /**
      * Devuelve cuantos datos hay en la coleccion
      * 
-     * @return size El numero de elementos almacenados en el MiHashMap
+     * @return El numero de elementos almacenados en el MiHashMap
      */
     public int size(){
         return arrayDeEnteros.length;
@@ -112,7 +112,7 @@ public class MiHashMap
      * Elimina el valor de la posicion indicada
      * 
      * @param clave El 'String' indice del valor a eliminar
-     * @return valor El 'int' valor borrado, -1 si el indice no existe
+     * @return El 'int' valor borrado, -1 si el indice no existe
      */
     public int remove(String clave){
         int valor = -1;
@@ -138,7 +138,7 @@ public class MiHashMap
      * Indica si el indice existe en el MiHashMap
      * 
      * @param clave El 'String' indice buscado
-     * @return existe 'true' si se encuentra, 'false' si no se encuentra
+     * @return 'true' si se encuentra, 'false' si no se encuentra
      */
     public boolean containsKey(String clave){
         return claves.contains(clave);
